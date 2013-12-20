@@ -11,7 +11,7 @@ piface_tool: main.o pfio.o
 
 install: piface_tool
 	mkdir -p $(prefix)/sbin/
-	install -m 0755 piface_tool -t $(prefix)/sbin/ $<
+	install -m 0755 -t $(prefix)/sbin/ $<
 .PHONY: install
 
 uninstall:
