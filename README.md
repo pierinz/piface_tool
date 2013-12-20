@@ -27,6 +27,6 @@ Usage: piface_tool [options] <pin number> [in|out [<value>]]
 Read/Set the piface pins.
 Pin '8' is a shortcut for all pins.
 
--n              Force no init (use if other programs are using the piface)
--v              Verbose
--h              Show this message
+- -n              Force no init (use if other programs are using the piface)
+- -v              Verbose
+- -h              Show this message
