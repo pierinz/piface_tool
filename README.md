@@ -1,14 +1,14 @@
 piface_tool
 ===========
 
-This program reads & sets pins of the piface board, without requiring additional dependencies
+This program reads & sets pins of the piface board, without requiring additional dependencies.  
 It includes a slightly modified version of the C library in https://github.com/thomasmacpherson/piface
 
 Installation
 ------------
 
-The PiFace board communicates with the Raspberry Pi using the SPI interface.
-Ensure the SPI module is loaded: modprobe spi-bcm2708.
+The PiFace board communicates with the Raspberry Pi using the SPI interface.  
+Ensure the SPI module is loaded: modprobe spi-bcm2708.  
 Refer to https://github.com/thomasmacpherson/piface/blob/master/README.md#installation-and-setup for additional details about SPI module.
 
 The program itself is installed as usual:
@@ -23,8 +23,8 @@ piface_tool is now available at /usr/local/sbin/piface_tool. You can change the 
 How to use it
 -------------
 
-Usage: piface_tool [options] pin_number [in|out [value]]
-Read/Set the piface pins.
+Usage: piface_tool [options] pin_number [in|out [value]]  
+Read/Set the piface pins.  
 Pin '8' is a shortcut for all pins.
 
 - -n              Force no init (use if other programs are using the piface)
