@@ -23,7 +23,7 @@ piface_tool is now available at /usr/local/sbin/piface_tool. You can change the 
 How to use it
 -------------
 
-Usage: piface_tool [options] <pin number> [in|out [<value>]]
+Usage: piface_tool [options] pin_number [in|out [value]]
 Read/Set the piface pins.
 Pin '8' is a shortcut for all pins.
 
