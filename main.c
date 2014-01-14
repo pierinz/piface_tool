@@ -71,9 +71,7 @@ void get_piface() {
 	}
 	
 	/* Mmapped memory must be aligned to page size */
-	pages=sizeof(p_mem)/sysconf(_SC_PAGE_SIZE);
-	if (pages==0)
-		pages=1;
+	pages=1+((sizeof(p_mem)-1)/sysconf(_SC_PAGE_SIZE));
 	size=pages*sysconf(_SC_PAGE_SIZE);
 	
 	/* Enlarge the file to the defined size */
