@@ -71,7 +71,7 @@ void get_piface() {
 	}
 	
 	/* Mmapped memory must be aligned to page size */
-	pages=sysconf(_SC_PAGE_SIZE)/sizeof(p_mem);
+	pages=sizeof(p_mem)/sysconf(_SC_PAGE_SIZE);
 	if (pages==0)
 		pages=1;
 	size=pages*sysconf(_SC_PAGE_SIZE);
@@ -83,6 +83,10 @@ void get_piface() {
 	}
 	/* Allocate the "shared memory" */
 	s_piface=(p_mem*) mmap(NULL, size, PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0);
+	if (s_piface==MAP_FAILED){
+		perror("mmap");
+		exit(1);
+	}
 	
 	/* If this is the first run, the piface must be initialised (the -n option can override this) */
 	if (new && init)
