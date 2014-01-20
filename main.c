@@ -177,6 +177,7 @@ int main(int argc, char** argv) {
 				pin--;
 				printf("%d\n",pfio_digital_read(pin));
 			}
+			pin--;
 		}
 		printf("%d\n",pfio_digital_read(pin));
 	}
@@ -187,6 +188,7 @@ int main(int argc, char** argv) {
 				pin--;
 				pfio_digital_write(pin,value);
 			}
+			pin--;
 		}
 		pfio_digital_write(pin,value);
 		
