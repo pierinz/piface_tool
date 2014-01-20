@@ -173,9 +173,9 @@ int main(int argc, char** argv) {
 	if (strcmp(mode,"in")==0){
 	/* Read pin */
 		if (pin==8){
-			while (pin>1){
+			while (pin>0){
 				pin--;
-				printf("%d\n",pfio_digital_read(pin));
+				printf("%d\n", pfio_digital_read(pin));
 			}
 		}
 		printf("%d\n",pfio_digital_read(pin));
@@ -183,7 +183,7 @@ int main(int argc, char** argv) {
 	else if (strcmp(mode,"out")==0){
 	/* Write value to pin */
 		if (pin==8){
-			while (pin>1){
+			while (pin>0){
 				pin--;
 				pfio_digital_write(pin,value);
 			}
