@@ -6,7 +6,7 @@ prefix:=/usr/local
 piface_tool: main.o pfio.o
 	$(CC) $(CFLAGS) $^ -o $@
 
-*.o: *.c
+%.o: %.c
 	$(CC) $(CFLAGS) $< -c -o $@
 
 install: piface_tool
