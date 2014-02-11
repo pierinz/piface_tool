@@ -203,7 +203,8 @@ int main(int argc, char** argv) {
 	
 	/* Relase the lock and the shared memory */
 	munmap(s_piface,size);
-	if (fcntl(fd, F_UNLCK, &fl)==-1){  /* F_GETLK, F_SETLK, F_SETLKW */
+	fl.l_type   = F_UNLCK;
+	if (fcntl(fd, F_SETLK, &fl)==-1){
 		perror("fcntl");
 		exit(1);
 	}
