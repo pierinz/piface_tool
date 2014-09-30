@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <sys/file.h>
 #include <sys/mman.h>
+#include <sys/stat.h>
 #include <sys/fcntl.h>
 #include <sys/errno.h>
 #include <sys/unistd.h>
@@ -50,6 +51,8 @@ void get_piface() {
 	if (fd < 0 && errno==ENOENT){
 		/* First run: create file and set flag */
 		fd=open(PIFACE_M, O_RDWR | O_CREAT, S_IRWXU);
+		/* Every privileged user should be able to use this */
+		fchmod(fd, 0666);
 		new=1;
 	}
 
